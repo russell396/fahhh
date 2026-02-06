@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unicode Stress Test</title>
+
+  <style>
+    /* ===== BACKGROUND ===== */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: monospace;
+      color: #eaeaea;
+      background:
+        radial-gradient(circle at top, #1a1a1a, #050505 70%),
+        repeating-linear-gradient(
+          45deg,
+          rgba(255,255,255,0.02),
+          rgba(255,255,255,0.02) 2px,
+          transparent 2px,
+          transparent 6px
+        );
+      padding: 30px;
+    }
+
+    /* ===== CONTAINER ===== */
+    .panel {
+      max-width: 700px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #ff5c5c;
+    }
+
+    ul {
+      line-height: 1.6;
+    }
+
+    .danger {
+      color: #ff5c5c;
+      font-weight: bold;
+    }
+
+    /* ===== SELECT ===== */
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: #0f0f0f;
+      color: #eaeaea;
+      border: 1px solid #333;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    select:hover {
+      border-color: #555;
+    }
+
+    /* ===== BUTTON ===== */
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      color: #fff;
+      background: linear-gradient(135deg, #ff3b3b, #ff006a);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 0, 80, 0.4);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 25px rgba(255, 0, 80, 0.7);
+    }
+
+    button:active {
+      transform: translateY(1px);
+      box-shadow: 0 0 10px rgba(255, 0, 80, 0.4);
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 12px;
+      opacity: 0.6;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="panel">
+  <h1>⚠️ EXTREME WARNING</h1>
+
+  <p class="danger">
+    THIS SITE INTENTIONALLY STRESSES YOUR COMPUTER.
+  </p>
+
+  <ul>
+    <li>Open <strong>Task Manager</strong> (Ctrl + Shift + Esc)</li>
+    <li>Open <strong>Activity Monitor</strong> on macOS</li>
+    <li>Be ready to force-close your browser</li>
+  </ul>
+
+  <p>
+    Large Unicode payloads can freeze your system and consume massive RAM.
+  </p>
+
+  <label for="difficulty">Select difficulty:</label>
+
+  <select id="difficulty">
+    <option value="payload_100k.html">Easy — 100,000 characters</option>
+    <option value="payload_500k.html">Medium — 500,000 characters</option>
+    <option value="payload_2m.html">Hard — 2,000,000 characters</option>
+  </select>
+
+  <button id="loadBtn">
+    I understand the risk — LOAD
+  </button>
+
+  <footer>
+    Unicode rendering stress test • use at your own risk
+  </footer>
+</div>
+
+<script src="loader.js"></script>
+
+</body>
+</html>
+
